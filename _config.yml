@@ -2,7 +2,7 @@
 title: 秋鸽的个人博客
 email: zhangbaige@innobuddy.com
 description: > # this means to ignore newlines until "baseurl:"
-  本博客就是为了整理工作上遇到的问题，以求
+  本博客就是为了整理工作上遇到的问题，以求能够整理一套完成的开发规范
 baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "http://qiuge.me" # the base hostname & protocol for your site
 twitter_username: beth
