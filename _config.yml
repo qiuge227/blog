@@ -1,14 +1,12 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: 秋鸽的个人博客
+email: zhangbaige@innobuddy.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  本博客就是为了整理工作上遇到的问题，以求
 baseurl: "/blog/" # the subpath of your site, e.g. /blog/
 url: "http://qiuge.me" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: beth
+github_username:  qiuge227
 
 # Build settings
 markdown: kramdown
