@@ -1,0 +1,9 @@
+/*header*/
+.navbar-brand img{
+  height: 50px;
+  margin-top: -15px;
+}
+/*page*/
+.pager {
+    margin: 100px 0 0;
+}

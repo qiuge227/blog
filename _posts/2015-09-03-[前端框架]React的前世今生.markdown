@@ -1,12 +1,14 @@
 ---
 layout:     post
-title:      "The dreams of yesterday are the hopes of today and the reality of tomorrow."
-date:       2014-07-01 12:00:00
-author:     "Start Bootstrap"
-header-img: "img/post-bg-02.jpg"
+title:      "【前端框架】React的前世今生"
+subtitle:   "引领未来的用户界面开发框架"
+date:       2015-09-03 22:00:00
+author:     "qiuge"
+img-outer:  ""
+header-img: "http://3861227.s21i-3.faiusr.com/2/ABUIABACGAAgq5akrwUorKvcywcw5Qs49AM.jpg"
 ---
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+<p>React是Facebook开源的JavaScript库，用于构建UI。你可以在React里传递多种类型的参数，如声明代码，帮助你渲染出UI、也可以是静态的HTML DOM元素、也可以传递动态变量、甚至是可交互的应用组件。（文字来自JS开发者微博）</p>
 
 <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
 
@@ -30,9 +32,6 @@ header-img: "img/post-bg-02.jpg"
 
 <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
 
-<a href="#">
-    <img src="{{ site.baseurl }}/img/post-sample-image.jpg" alt="Post Sample Image">
-</a>
 <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
 
 <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
