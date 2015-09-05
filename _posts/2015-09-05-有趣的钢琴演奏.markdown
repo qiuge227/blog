@@ -1,0 +1,97 @@
+---
+layout:     post
+title:      "有趣的钢琴演奏"
+subtitle:   "html5实现的艺术前端"
+date:       2015-09-05 15:00:00
+author:     "qiuge"
+img-outer:  ""
+header-img: "http://3861227.s21d-3.faiusrd.com/0/ABUIABAAGAAgm8CqrwUomL3gMg"
+tags:
+    - 艺术
+    - 前端
+---
+
+<script src="{{ "/project/html5webpiano/html5webpiano.js " | prepend: site.baseurl }}"></script>
+
+<style type="text/css">
+#main{width:750px;height:420px;position:relative;}
+#comment{font-size:12px;line-height:18px;padding-left:20px;}
+#address{color:#690;font-size:12px;padding-top:10px;padding-left:20px;}
+.key{position: absolute;float:left;top:40px;text-align: center;font-size:16px;background-position: bottom left;background-repeat: repeat-x;}
+.whiteKey{width:90px;height:360px;color:#000;background-color:#fff;border: 1px solid #333;}
+.blackKey{width:60px;height:200px;color:#fff;background-color:#000;border: 1px solid #333;}
+.whiteKey span{background-color: #444;position: relative;top: 500px;}
+.blackKey span{position: relative;top: -50px;}
+#play{overflow: hidden;word-break:break-all}
+</style>
+
+<div id="all">
+    <h1 style="width:100%;text-align:center;">html5 Web钢琴</h1>
+    <p>使用鼠标左键或键盘进行弹奏</p>
+    <a href="javascript:;" class="btn btn-default" onclick="autoPlaySound('Q,W,E,R,T,Y,U,I');">自动调音</a>
+  
+  <!--主要代码-->
+    <div id="main">
+        <div id="key60" class="key whiteKey" style="left: 0px;">q<br>a<br>z</div>
+        <div id="key62" class="key whiteKey" style="left: 90px; background-color: rgb(238, 238, 238);"><br>s<br>x</div>
+        <div id="key64" class="key whiteKey" style="left: 180px;"><br>d<br>c</div>
+        <div id="key65" class="key whiteKey" style="left: 270px;">r<br>f<br>v</div>
+        <div id="key67" class="key whiteKey" style="left: 360px;"><br>g<br>b</div>
+        <div id="key69" class="key whiteKey" style="left: 450px;"><br>h<br>n</div>
+        <div id="key71" class="key whiteKey" style="left: 540px;"><br>j<br>m</div>
+        <div id="key72" class="key whiteKey" style="left: 630px;">i<br>k<br>,</div>
+        <div id="key61" class="key blackKey" style="left: 110px;">w</div>
+        <div id="key63" class="key blackKey" style="left: 175px;">e</div>
+        <div id="key66" class="key blackKey" style="left: 290px;">t</div>
+        <div id="key68" class="key blackKey" style="left: 352px;">y</div>
+        <div id="key70" class="key blackKey" style="left: 415px;">u</div>
+    </div>
+  
+    <div id="comment">
+        <h3>弹奏方法</h3>
+        <p>使用鼠标左键点击钢琴键，或者键入钢琴键上输入的键盘文字。<br>支持浏览器：IE 9以上、Firefox 10以上、Chrome 17以上</p>
+　　</div>
+
+    <div id="play"></div>
+</div>
+<script type="text/javascript">
+var PianData = [{
+  name:"光阴的故事",
+  piano_album:"G,G,G,H,G,D,D,S,D,A,D,K,K,H,K,H,G,K,K,H,K,H,G,G,H,G,A,D,G,G,H,G,D,S,G,G,G,H,G,D,D,S,D,A,D,K,K,H,K,H,G,K,K,H,K,H,G,G,H,G,D,G,K,K,K,H,J,K,L"
+},{
+  name:"老男孩",
+  piano_album:"G,G,G,G,G,H,G,F,D,H,J,K,J,G,G,G,H,A,A,S,D,G,G,F,G,D,A,S,G,G,G,G,G,H,G,F,D,H,J,K,J,G,G,G,H,A,A,S,D,G,G,F,D,S,A,A"
+}];
+
+  function initHtml(name, album){
+    var htmlStr = [];
+    htmlStr.push('<h3>'+name+'</h3>');
+    htmlStr.push("<a href='javascript:;' class='btn btn-default' onclick=autoPlaySound('"+album+"')>自动播放</a>");
+    htmlStr.push('<p>'+changeLine(album)+'</p>');
+    return htmlStr.join("");
+  }
+
+  function changeLine(album){
+    var ary = album.split(",");
+    var aryTemp = [];
+    for(var i=1;i<ary.length+1;i++){
+      aryTemp.push(ary[i]);
+      if(i%35 == 0){
+        aryTemp.push("<br/>");
+      }
+    }
+    return aryTemp.join(",");
+  }
+
+  function loadHtml(){
+    var _that = this;
+    var htmlAry = [];
+    for(var i=0;i<PianData.length;i++){
+      htmlAry.push(_that.initHtml(PianData[i].name, PianData[i].piano_album));
+    }
+    var container = document.getElementById("play");
+    container.innerHTML = htmlAry.join("");
+  }
+
+loadHtml();
+</script>
