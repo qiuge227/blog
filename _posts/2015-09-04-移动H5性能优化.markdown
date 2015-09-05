@@ -5,6 +5,9 @@ date:       2015-09-04 12:00:00
 author:     "qiuge"
 img-outer:  ""
 header-img: "http://3861227.s21i-3.faiusr.com/2/ABUIABACGAAgwsWlrwUopL3V6wYwgA84uAg.jpg"
+tags:
+    - 前端
+    - 优化
 ---
 
 <blockquote>
