@@ -11,8 +11,6 @@ tags:
     - 前端
 ---
 
-<script src="{{ "/project/html5webpiano/html5webpiano.js " | prepend: site.baseurl }}"></script>
-
 <style type="text/css">
 #main{width:750px;height:420px;position:relative;}
 #comment{font-size:12px;line-height:18px;padding-left:20px;}
@@ -33,7 +31,7 @@ tags:
   <!--主要代码-->
     <div id="main">
         <div id="key60" class="key whiteKey" style="left: 0px;">q<br>a<br>z</div>
-        <div id="key62" class="key whiteKey" style="left: 90px; background-color: rgb(238, 238, 238);"><br>s<br>x</div>
+        <div id="key62" class="key whiteKey" style="left: 90px;"><br>s<br>x</div>
         <div id="key64" class="key whiteKey" style="left: 180px;"><br>d<br>c</div>
         <div id="key65" class="key whiteKey" style="left: 270px;">r<br>f<br>v</div>
         <div id="key67" class="key whiteKey" style="left: 360px;"><br>g<br>b</div>
@@ -54,6 +52,7 @@ tags:
 
     <div id="play"></div>
 </div>
+<script src="{{ "/project/html5webpiano/html5webpiano.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript">
 var PianData = [{
   name:"光阴的故事",
