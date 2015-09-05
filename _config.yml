@@ -1,7 +1,7 @@
 # Site settings
 title: Qiuge'Blog
 logo: img/logo.png
-header-img: img/home-bg.jpg
+header-img: img/home-bg.webp
 email: zhangbaige@innobuddy.com
 description: > # this means to ignore newlines until "baseurl:"
   本博客就是为了整理工作上遇到的问题，以求能够整理一套完成的开发规范
