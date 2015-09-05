@@ -3,6 +3,11 @@
   height: 50px;
   margin-top: -15px;
 }
+/*nav*/
+.navbar-custom {
+    background-color: #008faf;
+    border:0;
+}
 /*page*/
 .pager {
     margin: 100px 0 0;
