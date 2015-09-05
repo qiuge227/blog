@@ -9,6 +9,7 @@
 	html5webPiano.START_NOTE_NUMBER = 60;
 	html5webPiano.END_NOTE_NUMBER = 72;
 	html5webPiano.OFFSET = [0,60,90,150,180,270,330,360,420,450,510,540,630];
+	var clearPianoTimer = null;
 	// [1 3  5 6 8 10 12 13]
 
 	window.onload = function(){
@@ -83,14 +84,15 @@
 
 	//自动播放钢琴曲
 	function autoPlaySound(string, timeAry){
+		clearPianoTimer = null;
 		var noteAry = string.split(",");
-		var time = 500;
+		var time = 300;
 		for(var i=0;i<noteAry.length;i++){
 			if(timeAry){
 				time = timeAry[i];
 			}
 			var noteNumber = getNoteNumber(noteAry[i]);
-			setTimeout('playSound('+noteNumber+');',time*i);
+			clearPianoTimer = setTimeout('playSound('+noteNumber+');',time*i);
 		}
 	}
 

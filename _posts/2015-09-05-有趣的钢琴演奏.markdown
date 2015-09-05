@@ -61,6 +61,9 @@ var PianData = [{
 },{
   name:"老男孩",
   piano_album:"G,G,G,G,G,H,G,F,D,H,J,K,J,G,G,G,H,A,A,S,D,G,G,F,G,D,A,S,G,G,G,G,G,H,G,F,D,H,J,K,J,G,G,G,H,A,A,S,D,G,G,F,D,S,A,A"
+},{
+  name:"小苹果",
+  piano_album:"H,F,G,S,H,G,F,G,S,H,F,G,G,G,K,H,D,F,F,D,S,D,F,G,A,L,K,H,H,G,F,G,H,G,H,G,K,K,K,K,K,K,H,F,G,S,H,G,F,G,S,H,F,G,G,G,K,H,D,F,F,D,S,D,F,G,A,L,K,H,H,G,F,G,H,G,A,S,S,F,S"
 }];
 
   function initHtml(name, album){
