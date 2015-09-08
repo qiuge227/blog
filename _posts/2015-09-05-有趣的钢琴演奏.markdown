@@ -63,6 +63,9 @@ var PianData = [{
 },{
   name:"小苹果",
   piano_album:"H,F,G,S,H,G,F,G,S,H,F,G,G,G,K,H,D,F,F,D,S,D,F,G,A,L,K,H,H,G,F,G,H,G,H,G,K,K,K,K,K,K,H,F,G,S,H,G,F,G,S,H,F,G,G,G,K,H,D,F,F,D,S,D,F,G,A,L,K,H,H,G,F,G,H,G,A,S,S,F,S"
+},{
+  name:"命运交响曲",
+  piano_album:"D,D,F,G,G,F,D,S,A,A,S,D,D,S,S,D,D,F,G,G,F,D,S,A,A,S,D,S,A,A,S,S,D,A,S,D,F,D,S,A,S,A,D,D,F,G,G,F,D,S,A,A,S,D,S,A,A"
 }];
 
   function initHtml(name, album){

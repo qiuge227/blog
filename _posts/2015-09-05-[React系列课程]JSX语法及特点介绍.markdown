@@ -1,0 +1,69 @@
+---
+layout:     post
+title:      "[React系列课程]JSX语法及特点介绍"
+subtitle:   ""
+date:       2015-09-05 23:00:00
+author:     "qiuge"
+img-outer:  ""
+header-img: "http://3861227.s21i-3.faiusr.com/2/ABUIABACGAAgq5akrwUorKvcywcw5Qs49AM.jpg"
+subimg:     "http://3861227.s21i-3.faiusr.com/2/ABUIABACGAAgq5akrwUorKvcywcw5Qs49AM.jpg"
+tags:
+    - 前端
+    - React
+---
+
+> **“1.什么是JSX
+2.如何使用JSX
+3.非DOM属性介绍
+4.JSX解释器架构介绍”**
+
+##什么是JSX
+
+###JSX发展历程
+
+JSX = JavaScriptXML
+此JSX非彼JSX，（https://facebook.github.io/jsx）
+
+####JSX是：
+  * 基于ECMAScript的一种新特性
+  * 一种定义带属性树结构的语法
+
+####JSX不是：
+  * XML或者HTML
+  * 一种限制
+
+###JSX的特点
+  * 类XML语法容易接收
+  * 增强JS语义
+  * 结构清晰
+  * 抽象程度高
+  * 代码模块化
+
+##如何使用JSX
+
+###JSX语法
+
+{% highlight ruby %}
+var HelloMessage = React.createClass({
+  render: function(){
+    return <div className="test">Hello {this.props.name}</div>;
+  }
+});
+React.render(<HelloMessage name="John"/>, mountMode);
+{% endhighlight %}
+
+元素名
+子节点
+节点属性
+
+####首字母大小写
+大写就是自定义的组件，小写就是react内部的dom组件
+
+####嵌套
+####求值表达式
+作为js的一种特性
+多个表达式是可以
+
+
+
+
