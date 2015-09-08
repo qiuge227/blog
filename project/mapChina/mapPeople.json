@@ -1,0 +1,156 @@
+[{
+    "id": "4",
+    "name": "杜鑫卓",
+    "nickname": "素履",
+    "job": "Node开发工程师",
+    "github": "github.com/sulv",
+    "image": "http: //tse1.mm.bing.net/th?&id=OIP.Mc8c03e62f78cbcad0969763649b6f50fo0&w=300&h=300&c=0&pid=1.9&rs=0&p=0",
+    "introduction": "凡心所向，素履所往",
+    "province": {
+      "name": "henan",
+      "img": "./images/imgtest/img2.jpg"
+    }
+  }, {
+    "id": "1",
+    "name": "梁少峰",
+    "nickname": "小峰峰",
+    "job": "Web前端开发工程师",
+    "github": "https://github.com/ShaofengLiang",
+    "image": "http://tse1.mm.bing.net/th?&id=OIP.M409508839bd6f75c6b8e666a2ca8c3f6o0&w=300&h=300&c=0&pid=1.9&rs=0&p=0",
+    "introduction": "我就是我，颜色不一样的烟火",
+    "province": {
+      "name": "guangdong",
+      "img": "./images/imgtest/img7.jpg"
+    }
+  }, {
+    "id": "2",
+    "name": "彭泉鑫",
+    "nickname": "EE0703",
+    "job": "Python开发工程师",
+    "github": "github.com/ee0703",
+    "image": "https://avatars3.githubusercontent.com/u/8089095?v=3&s=460",
+    "introduction": "码农，伪Geek，ACG爱好者，知乎:http://www.zhihu.com/people/peng-quan-xin，豆瓣: http://www.douban.com/people/ee_the_sage/",
+    "province": {
+      "name": "jiangxi",
+      "img": "./images/imgtest/img8.jpg"
+    }
+  },
+  {
+    "id": "3",
+    "name": "王思航",
+    "nickname": "Sinux",
+    "job": "Python开发工程师",
+    "github": "https://github.com/shnode",
+    "image": "https://avatars1.githubusercontent.com/u/7784713?v=3&s=460",
+    "introduction": "只是个逗比而已......",
+    "province": {
+      "name": "heilongjiang",
+      "img": "./images/imgtest/img6.jpg"
+    }
+  },
+  {
+    "id": "4",
+    "name": "徐本胜",
+    "nickname": "大圣",
+    "job": "Nodejs开发工程师",
+    "github": "github.com/fengliner",
+    "image": "http://www.5qdd.com/files/touxiang/01-07/dd121101193158-12.jpg",
+    "introduction": "热爱生活，热爱工作，热爱篮球",
+    "province": {
+      "name": "shandong",
+      "img": "./images/imgtest/img3.jpg"
+    }
+  },
+  {
+    "id": "6",
+    "name": "郑明彬",
+    "nickname": "起名字真难",
+    "job": "Android开发工程师",
+    "github": "https://github.com/qq2748",
+    "image": "http://www.qqcan.com/uploads/allimg/c110829/13145SG339560-42105.jpg",
+    "introduction": "近看是悲剧，远看是悲剧",
+    "province": {
+      "name": "guangdong",
+      "img": "./images/imgtest/img7.jpg"
+    }
+  },
+  {
+    "id": "8",
+    "name": "黄权",
+    "nickname": "木又兄",
+    "job": "SmartStudy CTO",
+    "github": "github.com/huangq03",
+    "image": "http://tse3.mm.bing.net/th?id=OIP.M67099eab7fd6794c7cf1054f98e261f4o0&pid=15.1",
+    "introduction": "SmartStudy",
+    "province": {
+      "name": "hubei",
+      "img": "./images/imgtest//img1.jpg"
+    }
+  },
+  {
+    "id": "9",
+    "name": "李鹏辉",
+    "nickname": "eric",
+    "job": "Android  测试工程师",
+    "github": "https://github.com/lipenghui-zhike",
+    "image": "http://tse1.mm.bing.net/th?&id=OIP.Mb688b8f5616873b67072d6331a754ed3o0&w=300&h=300&c=0&pid=1.9&rs=0&p=0",
+    "introduction": "除了放弃尝试以外没有失败!",
+    "province": {
+      "name": "henan",
+      "img": "./images/imgtest//img4.jpg"
+    }
+  },
+  // 陕西 山西  这个有问题 
+  {
+    "id": "10",
+    "name": "邓诚",
+    "nickname": "cruller",
+    "job": "工程师",
+    "github": "https://github.com/lipenghui-zhike",
+    "image": "http://tse1.mm.bing.net/th&id=OIP.Mb688b8f5616873b67072d6331a754ed3o0&w=300&h=300&c=0&pid=1.9&rs=0&p=0",
+    "introduction": "除了放弃尝试以外没有失败!",
+    "province": {
+      "name": "shanxi",
+      "img": "./images/imgtest//img4.jpg"
+    }
+  },
+  {  
+    "id": "11",
+      "name": "杨靖宇",
+      "nickname": "此ID想了很久",
+      "job": "IOS工程师",
+      "github": "github.com/JingyuYang",
+      "image": "http://tse1.mm.bing.net/th?&id=OIP.Mb5c6fea29aef0875112ba7d14458ae9eo0&w=300&h=300&c=0&pid=1.9&rs=0&p=0",
+      "introduction": "没有失败!",
+      "province": {    
+      "name": "henan",
+          "img": "./images/imgtest//img4.jpg"  
+    }
+  },
+  {  
+    "id": "12",
+      "name": "刘成",
+      "nickname": "fisher",
+      "job": "AS工程师",
+      "github": "",
+      "image": "http://tse1.mm.bing.net/th?&id=OIP.Mb5c6fea29aef0875112ba7d14458ae9eo0&w=300&h=300&c=0&pid=1.9&rs=0&p=0",
+      "introduction": "没有失败!",
+      "province": {    
+      "name": "anhui",
+          "img": "./images/imgtest//img4.jpg"  
+    }
+  },
+  {  
+    "id": "13",
+      "name": "李祖徳",
+      "nickname": "小人物",
+      "job": "后端工程师",
+      "github": "github.com/lzdnku307",
+      "image": "http://tse4.mm.bing.net/th?id=OIP.Mea73c6960b450d4bb6b032445a2ee12do0&w=148&h=145&c=7&rs=1&qlt=90&o=4&pid=1.1",
+      "introduction": "呃...还没想好",
+      "province": {    
+      "name": "hainani",
+          "img": "./images/imgtest//img4.jpg"  
+    }
+  }
+]
