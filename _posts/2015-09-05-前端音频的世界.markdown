@@ -1,0 +1,214 @@
+---
+layout:     post
+title:      "前端音频的世界"
+subtitle:   "用声音告诉自己，我们做的事情有多酷"
+date:       2015-09-08 12:00:00
+author:     "qiuge"
+img-outer:  ""
+header-img: "http://3861227.s21d-3.faiusrd.com/0/ABUIABAAGAAgtd2prwUo0LfqxgU"
+subimg:     "http://3861227.s21i-3.faiusr.com/3/ABUIABADGAAg_-e5rwUo5J382AQwgAM4zgE.gif"
+tags:
+    - 前端
+    - 音频
+    - 项目
+    - 组件开发
+comment-loading: ""
+---
+
+<h2>音频的世界</h2>
+
+<p>先来一首简单的音乐</p>
+<a class="btn btn-primary" href="javascript:void(0);" onclick="getCurrentTime('firefox');">获取播放时间</a>
+<a class="btn btn-success" href="javascript:void(0);" onclick="playOrPaused('firefox',this);">播放</a>
+<a class="btn btn-info" href="javascript:void(0);" onclick="hideOrShowControls('firefox',this);">隐藏控制框</a>
+<a class="btn btn-danger" href="javascript:void(0);" onclick="muted('firefox',this);">开启静音</a>
+<input class="btn btn-default" type="button" value="+" id="upVol" onclick="vol('firefox' , 'up' , this )"/>
+音量
+<input class="btn btn-default" type="button" value="-" onclick="vol('firefox' , 'down' ,this )"/>
+
+<audio src="{{ '/media/bdf0c2fdaed863c7902b8c1b56f0ef5d.mp3' | prepend: site.baseurl }}" id="audio" controls="controls" ></audio>
+
+当前音量：<span  id = "nowVol"> - </span>
+
+当前播放时间：<span  id = "nowTime"> - </span>
+
+<h2>关于Audio</h2>
+<p>
+  我们怎么获取音频的对象，是通过H5的Audio标签，还是js创建一个Audio对象。其实都可以，我们实现的方式多种多样，但是结果终究是殊途同归。
+</p>
+方法1：
+{% highlight ruby %}
+var audio = new Audio('{{ "/media/bdf0c2fdaed863c7902b8c1b56f0ef5d.mp3" | prepend: site.baseurl }}');
+audio.play();
+{% endhighlight %}
+方法2：
+{% highlight ruby %}
+var audio;
+audio = document.getElementById('audio');
+var currentTime = audio.currentTime;//获取当前音频的时间
+var currentVolume = audio.volume;//获取当前音频的音量
+var isPaused = audio.paused;//判断当前音频的是否暂停
+var isControls = audio.controls;//判断当前音频是否被控制
+var isMuted = audio.muted;//判断当前音频是否静音
+audio.play();//当前音频开始播放
+audio.pause();//当前音频暂停
+{% endhighlight %}
+
+<h2>音频更好的解决方案</h2>
+<p>第一种方式只能做到音频的播放，第二种方式只能做到支持h5的浏览器来进行播放，终归是有局限性的。</p>
+<p>那么，重点来了。怎么样才能全方位，无死角的使用自定义的音频控件呢？</p>
+<script type="text/javascript">
+// var audio = new Audio('{{ "/media/bdf0c2fdaed863c7902b8c1b56f0ef5d.mp3" | prepend: site.baseurl }}');
+// audio.play();
+var audio ;
+var clearTimer = null;
+window.onload = function(){
+  initAudio();
+  clearTimer = setInterval(function(){
+    getCurrentTime();
+  },1000);
+}
+var initAudio = function(){
+  audio =  document.createElement("audio")
+  audio.src='Never Say Good Bye.ogg'
+  audio = document.getElementById('audio');
+  console.log(audio);
+}
+function getCurrentTime(id){
+  document.getElementById('nowTime').innerHTML = parseInt(audio.currentTime) + '：秒';
+  document.getElementById('nowVol').innerHTML = returnFloat1(audio.volume);
+}
+ 
+function playOrPaused(id,obj){
+  if(audio.paused){
+    audio.play();
+    obj.innerHTML='暂停';
+    return;
+  }
+  audio.pause();
+  obj.innerHTML='播放';
+}
+ 
+function hideOrShowControls(id,obj){
+  if(audio.controls){
+    audio.removeAttribute('controls');
+    obj.innerHTML = '显示控制框'
+    return;
+  }
+  audio.controls = 'controls';
+  obj.innerHTML = '隐藏控制框'
+  return;
+}
+function vol(id,type , obj){
+  if(type == 'up'){
+    var volume = audio.volume  + 0.1;
+    if(volume >=1 ){
+      volume = 1 ;
+    }
+    audio.volume =  volume;
+  }else if(type == 'down'){
+    var volume = audio.volume  - 0.1;
+    if(volume <=0 ){
+      volume = 0 ;
+    }
+    audio.volume =  volume;
+  }
+  document.getElementById('nowVol').innerHTML = returnFloat1(audio.volume);
+}
+function muted(id,obj){
+  if(audio.muted){
+    audio.muted = false;
+    obj.innerHTML = '开启静音';
+  }else{
+    audio.muted = true; 
+    obj.innerHTML = '关闭静音';
+  }
+}
+ //保留一位小数点
+function returnFloat1(value) {    
+  value = Math.round(parseFloat(value) * 10) / 10;
+  if (value.toString().indexOf(".") < 0){
+    value = value.toString() + ".0";
+  }
+  return value;
+}
+</script>
+
+<header>
+   <h1>audio.js</h1>
+</header>
+
+<audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="auto"></audio>
+
+<h2>audio.js is a drop-in javascript library that allows HTML5’s &lt;audio&gt; tag to be used anywhere.</h2>
+
+<p>It uses native &lt;audio&gt; where available and an invisible flash player to emulate &lt;audio&gt; for other browsers. It provides a consistent html player UI to all browsers which can be styled used standard css.</audio>
+
+<div class="download">
+      <a href="http://kolber.github.com/audiojs/audiojs.zip" class="button"><em>Download</em> audio.js</a>
+</div>
+
+<h3>Installation</h3>
+<ol>
+  <li>
+        <p>Put <code>audio.js</code>, <code>player-graphics.gif</code> & <code>audiojs.swf</code> in the same folder.</p>
+  </li>
+  <li>
+        <p>Include the <code>audio.js</code> file:</p>
+        <pre><code>&lt;script src="/audiojs/audio.min.js"&gt;&lt;/script&gt;</code></pre>
+  </li>
+  <li>
+        <p>Initialise audio.js:</p>
+        <pre><code>&lt;script&gt;
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+&lt;/script&gt;</code></pre>
+  </li>
+  <li>
+        <p>Then you can use <code>&lt;audio&gt;</code> wherever you like in your HTML:</p>
+        <pre><code>&lt;audio src="/mp3/juicy.mp3" preload="auto" /&gt;</code></pre>
+  </li>
+</ol>
+
+<h3>Examples</h3>
+<p>A series of API tests & examples for using and extending audio.js</p>
+<p><em>Example 1</em> <a href="http://kolber.github.com/audiojs/demos/test1.html">Test multiple load types</a></p>
+<p><em>Example 2</em> <a href="http://kolber.github.com/audiojs/demos/test2.html">Custom markup/css</a></p>
+<p><em>Example 3</em> <a href="http://kolber.github.com/audiojs/demos/test3.html">Multiple players, testing <code>preload</code>, <code>loop</code> & <code>autoplay</code> attributes</a></p>
+<p><em>Example 4</em> <a href="http://kolber.github.com/audiojs/demos/test5.html">Customised player</a></p>
+<p><em>Example 5</em> <a href="http://kolber.github.com/audiojs/demos/test6.html">Customised playlist player</a></p>
+   
+<h3>Browser & format support</h3>
+<p>With Flash as a fallback, it should work pretty much anywhere.<br>
+      It has been verified to work across:</p>
+<ul>
+      <li>Mobile Safari <em>(iOS 3+)</em></li>
+      <li>Android <em>(2.2+, w/Flash)</em></li>
+      <li>Safari <em>(4+)</em></li>
+      <li>Chrome <em>(7+)</em></li>
+      <li>Firefox <em>(3+, w/ Flash)</em></li>
+      <li>Opera <em>(10+, w/ Flash)</em></li>
+      <li>IE <em>(6, 7, 8, w/ Flash)</em></li>
+</ul>
+<p><strong>ogg</strong></p>
+<p>audio.js focuses on playing mp3s. It doesn’t currently support the ogg format. As mp3 is the current defacto music transfer format, ogg support is lower on our list of priorities.</p>
+
+<h3>Flash local security</h3>
+<blockquote>
+  <p><strong>Note:</strong> For local content running in a browser, calls to the <code>ExternalInterface.addCallback()</code> method work only if the SWF file and the containing web page are in the local-trusted security sandbox.</p>
+  <cite>
+  <a href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/external/ExternalInterface.html#addCallback()">ActionScript® 3.0 Reference for the Adobe® Flash® Platform</a>
+  </cite>
+</blockquote>
+  <p>This means that unless you have gone through the rigmarole of setting up your <a href="http://kb2.adobe.com/cps/093/4c093f20.html#main_blocked">flash player security settings for local files</a>, <code>ExternalInterface</code> calls will only work when the page is loaded from a ‘domain’. <code>http://localhost</code> counts, but any <code>file://</code> requests don’t.</p>
+
+<h3>Source code</h3>
+  <p>All efforts have been made to keep the source as clean and readable as possible. Until we release more detailed documentation, the annotated source is the best reference for usage.</p>
+  <p><a href="http://kolber.github.com/audiojs/docs/">Annotated source</a> / <a href="http://github.com/kolber/audiojs">Source on Github</a></p>
+
+<h3>License</h3>
+  <p>audio.js is released under an <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>, so do with it what you will.</p>
+<footer>
+  框架来源：<a href="http://kolber.github.io/audiojs/">http://kolber.github.io/audiojs/</a>
+</footer>
