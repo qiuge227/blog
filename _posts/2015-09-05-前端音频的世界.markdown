@@ -137,8 +137,13 @@ function returnFloat1(value) {
 <header>
    <h1>audio.js</h1>
 </header>
-
-<audio src="http://kolber.github.io/audiojs/demos/mp3/juicy.mp3" preload="auto"></audio>
+<script src="{{ '/project/audiojs/audio.min.js' | prepend: site.baseurl }}"></script>
+<script>
+      audiojs.events.ready(function() {
+        audiojs.createAll();
+      });
+</script>
+<audio src="{{ '/media/bdf0c2fdaed863c7902b8c1b56f0ef5d.mp3' | prepend: site.baseurl }}" ></audio>
 
 <h2>audio.js is a drop-in javascript library that allows HTML5’s &lt;audio&gt; tag to be used anywhere.</h2>
 
