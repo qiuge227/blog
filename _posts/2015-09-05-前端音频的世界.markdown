@@ -99,6 +99,7 @@ function hideOrShowControls(id,obj){
   obj.innerHTML = '隐藏控制框'
   return;
 }
+
 function vol(id,type , obj){
   if(type == 'up'){
     var volume = audio.volume  + 0.1;
