@@ -94,3 +94,9 @@ a{cursor: pointer;}
     font-size: 14px;
   }
 }
+
+/*分享*/
+#shareBtn{
+  display: block;
+  margin: 0 auto 10px auto;
+}

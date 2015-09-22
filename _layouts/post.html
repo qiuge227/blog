@@ -1,50 +1,64 @@
---- layout: default ---
+---
+layout: default
+---
+
 <!-- Post Header -->
 <header class="intro-header" style="{% if page.img-outer %}background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}'){% else %}background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}'){% endif %}">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            {% for tag in page.tags %}
-            <a class="tag" href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a> {% endfor %}
-          </div>
-          <h1>{{ page.title }}</h1> {% if page.subtitle %}
-          <h2 class="subheading">{{ page.subtitle }}</h2> {% endif %}
-          <!-- <p>{{ page.excerpt }}</p> -->
-          <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% if page.subtitle %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% endif %}
+                    <!-- <p>{{ page.excerpt }}</p> -->
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>
+
 <!-- Post Content -->
 <article>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <a class="btn btn-info" id="shareBtn" href="javascript:;">分享到朋友圈</a>
-        {{ content }}
-        <hr>
-        <ul class="pager">
-          {% if page.previous.url %}
-          <li class="previous">
-            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Prev</a>
-          </li>
-          {% endif %} {% if page.next.url %}
-          <li class="next">
-            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next &rarr;</a>
-          </li>
-          {% endif %}
-        </ul>
-        {% if page.comment-loading %}
-        <div id="disqus_thread"></div>
-        {% endif %}
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				{{ content }}
+
+                <hr>
+
+                <a class="btn btn-info" id="shareBtn" href="javascript:WeiXinShareBtn()">分享到朋友圈</a>
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Prev</a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% if page.comment-loading %}
+                <div id="disqus_thread"></div>
+                {% endif %}
+            </div>
+
+        </div>
     </div>
-  </div>
 </article>
+<hr>
 <script type="text/javascript">
+//微信分享
 function WeiXinShareBtn() {
   if (typeof WeixinJSBridge == "undefined") {
     alert("请先通过微信搜索 秋阁工作室 添加 beth 为好友，通过微信分享文章 ");
@@ -57,8 +71,4 @@ function WeiXinShareBtn() {
     });
   }
 }
-$("#shareBtn").click(function(){
-    WeiXinShareBtn();
-});
 </script>
-<hr>
